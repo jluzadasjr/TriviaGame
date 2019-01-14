@@ -1,0 +1,42 @@
+body {
+    background-image: linear-gradient(red,yellow);
+}
+.container {
+    background: url("../images/dbztitle.png");
+    background-repeat: no-repeat;
+    padding: 110px 10px 100px 30px;
+}
+
+.display-4 {
+    padding: 50px;
+}
+
+.squad {
+    background: url("../images/dbz.webp");
+    background-repeat: no-repeat;
+    margin: -230px 120px 0px 0px;
+    float: right;
+    width: 20%;
+}
+
+.trivia { 
+    font-family: 'Bungee Shade', cursive;
+    color: red;
+    font-size: 100px;
+    padding: 30px;
+    margin: -130px 0px -100px 0px;
+}
+
+.main-box {
+    color: orange;
+    height: 1000px;
+    padding: 2%;
+    margin: 100px;
+    font-family: 'Bungee Shade', cursive;
+    text-align: center;
+    background: url(../images/kingkaiplace.jpg);
+    background-repeat: no-repeat;
+}
+
+
+
