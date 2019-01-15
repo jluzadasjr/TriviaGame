@@ -163,7 +163,7 @@ body {
     background-repeat: no-repeat;
     margin: -190px 20px 0px 0px;
     float: right;
-    width: 23%;
+    width: 20%;
 }
 
 @media screen and (max-width: 640px) {
@@ -184,7 +184,31 @@ body {
 .squad {
     position: sticky;
     background-repeat: no-repeat;
-    margin: -100px 350px 0px 0px;
+    margin: -140px 170px 0px 0px;
     float: right;
-    width: 23%;
+    width: 40%;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        background: url(../images/dbztitle6.png);
+        background-repeat: no-repeat;
+        margin-top: 5px;
+    }
+
+
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 60px;
+        padding-top: 80px;
+
+}
+
+.squad {
+    position: sticky;
+    background-repeat: no-repeat;
+    margin: -120px 150px 0px 0px;
+    float: right;
+    width: 40%;
 }
