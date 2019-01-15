@@ -22,7 +22,7 @@ body {
 
 .trivia { 
     font-family: 'Bungee Shade', cursive;
-    color: red;
+    color: yellow;
     font-size: 100px;
     padding: 30px;
     margin: -130px 0px -100px 0px;
@@ -30,13 +30,18 @@ body {
 
 .main-box {
     color: black;
-    height: 1000px;
+    height: 2000px;
     padding: 4%;
     margin: 100px;
     font-family: 'Bungee Shade', cursive;
     text-align: center;
-    background: url(../images/kingkaiplace.jpg);
+    /* background: url(../images/kingkaiplace.jpg); */
     background-repeat: no-repeat;
+}
+
+.question {
+    font-family: 'Encode Sans Condensed', sans-serif, bold;
+    font-size: 20px;
 }
 
 
