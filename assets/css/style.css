@@ -13,8 +13,9 @@ body {
 
 .squad {
     background: url("../images/dbz.webp");
+    position: sticky;
     background-repeat: no-repeat;
-    margin: -230px 120px 0px 0px;
+    margin: -230px 80px 0px 0px;
     float: right;
     width: 20%;
 }
@@ -28,9 +29,9 @@ body {
 }
 
 .main-box {
-    color: orange;
+    color: black;
     height: 1000px;
-    padding: 2%;
+    padding: 4%;
     margin: 100px;
     font-family: 'Bungee Shade', cursive;
     text-align: center;
@@ -39,4 +40,151 @@ body {
 }
 
 
+@media screen and (max-width: 1400px) {
+    .squad {
+        position: sticky;
+        background-repeat: no-repeat;
+        margin: -200px 50px 0px 0px;
+        float: right;
+        width: 20%;
+    }
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 90px;
+}
 
+@media screen and (max-width: 1350px) {
+    .container {
+        background: url(../images/dbztitle.png);
+        background-repeat: no-repeat;
+    }
+    .squad {
+        position: sticky;
+        background-repeat: no-repeat;
+        margin: -210px 40px 0px 0px;
+        float: right;
+        width: 20%;
+    }
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 80px;
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        background: url(../images/dbztitle2.png);
+        background-repeat: no-repeat;
+
+    }
+
+    .squad {
+        position: sticky;
+        background-repeat: no-repeat;
+        margin: -215px 30px 0px 0px;
+        float: right;
+        width: 23%;
+    }
+
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 70px;
+
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        background: url(../images/dbztitle3.png);
+        background-repeat: no-repeat;
+    }
+
+    .squad {
+        position: sticky;
+        background-repeat: no-repeat;
+        margin: -190px 30px 0px 0px;
+        float: right;
+        width: 23%;
+    }
+
+
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 60px;
+
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        background: url(../images/dbztitle4.png);
+        background-repeat: no-repeat;
+    }
+}
+
+
+.trivia { 
+    font-family: 'Bungee Shade', cursive;
+    color: red;
+    font-size: 50px;
+
+}
+.squad {
+    position: sticky;
+    background-repeat: no-repeat;
+    margin: -190px 60px 0px 0px;
+    float: right;
+    width: 23%;
+}
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        background: url(../images/dbztitle5.png);
+        background-repeat: no-repeat;
+    }
+
+
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 50px;
+
+}
+
+.squad {
+    position: sticky;
+    background-repeat: no-repeat;
+    margin: -190px 20px 0px 0px;
+    float: right;
+    width: 23%;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        background: url(../images/dbztitle5.png);
+        background-repeat: no-repeat;
+    }
+
+
+    .trivia { 
+        font-family: 'Bungee Shade', cursive;
+        color: red;
+        font-size: 60px;
+        padding-top: 80px;
+
+}
+
+.squad {
+    position: sticky;
+    background-repeat: no-repeat;
+    margin: -100px 350px 0px 0px;
+    float: right;
+    width: 23%;
+}
