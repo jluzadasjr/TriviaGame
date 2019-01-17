@@ -1,7 +1,7 @@
 body {
     background-image: linear-gradient(red,yellow);
 }
-.container {
+#test {
     background: url("../images/dbztitle.png");
     background-repeat: no-repeat;
     padding: 110px 10px 100px 30px;
@@ -31,7 +31,7 @@ body {
 .main-box {
     color: black;
     height: 2000px;
-    padding: 4%;
+    padding: 10%;
     margin: 100px;
     font-family: 'Bungee Shade', cursive;
     text-align: center;
@@ -55,12 +55,12 @@ body {
     }
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 90px;
 }
 
 @media screen and (max-width: 1350px) {
-    .container {
+    #test {
         background: url(../images/dbztitle.png);
         background-repeat: no-repeat;
     }
@@ -73,14 +73,14 @@ body {
     }
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 80px;
 
 }
 
 
 @media screen and (max-width: 1200px) {
-    .container {
+    #test {
         background: url(../images/dbztitle2.png);
         background-repeat: no-repeat;
 
@@ -96,13 +96,13 @@ body {
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 70px;
 
 }
 
 @media screen and (max-width: 980px) {
-    .container {
+    #test {
         background: url(../images/dbztitle3.png);
         background-repeat: no-repeat;
     }
@@ -118,13 +118,13 @@ body {
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 60px;
 
 }
 
 @media screen and (max-width: 980px) {
-    .container {
+    #test {
         background: url(../images/dbztitle4.png);
         background-repeat: no-repeat;
     }
@@ -133,7 +133,7 @@ body {
 
 .trivia { 
     font-family: 'Bungee Shade', cursive;
-    color: red;
+    color: yellow;
     font-size: 50px;
 
 }
@@ -150,7 +150,7 @@ body {
 
 
 @media screen and (max-width: 768px) {
-    .container {
+    #test {
         background: url(../images/dbztitle5.png);
         background-repeat: no-repeat;
     }
@@ -158,7 +158,7 @@ body {
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 50px;
 
 }
@@ -172,7 +172,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-    .container {
+    #test {
         background: url(../images/dbztitle5.png);
         background-repeat: no-repeat;
     }
@@ -180,7 +180,7 @@ body {
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 60px;
         padding-top: 80px;
 
@@ -195,7 +195,7 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    .container {
+    #test {
         background: url(../images/dbztitle6.png);
         background-repeat: no-repeat;
         margin-top: 5px;
@@ -204,7 +204,7 @@ body {
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
-        color: red;
+        color: yellow;
         font-size: 60px;
         padding-top: 80px;
 
