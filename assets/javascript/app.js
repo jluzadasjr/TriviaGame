@@ -9,41 +9,32 @@ var questions = [
     ["What is the magical food called that can restore your health?", "Edemame", "Senzu Bean", " Rice Buns", "Sushi", "B"],
     ["How many Dragon Balls are there?", "2", "7", " 151", " 3", "B"],
     ["Who is the prince of the Saiyan race?", "Majin Buu", "Cell", " Vegeta", " Raditz", "C"],
-    ["What is the name of the dance that combined Goku and Vegeta into one strong fighter?", "Fusion Dance", "The Shimmy", "(c) Combination Dance", " Break Dance", "A"]
+    ["What is the name of the dance that combined Goku and Vegeta into one strong fighter?", "Fusion Dance", "The Shimmy", "Combination Dance", " Break Dance", "A"],
+    ["What is the name of Goku's cloud", "Amazon Cloud", "Nimbus", "Cirrus", "Altostratus", "B"],
+    ["What technique does Goku use to get from one place to another instantly?", "Instant Transmission", "DeLorean Teleportation", "Time Travel", "Psychosis", "A"], 
 ];
 
 var audio1 = new Audio ('assets/images/kamehameha.wav');
 var audio2 = new Audio ('assets/images/aura.wav');
 var audio3 = new Audio ('assets/images/vegeta.wav');
 var audio4 = new Audio ('assets/images/powerup.wav');
+// var number = 30;
+// var counter = setInterval(myTimer, 1000); 
 
 
 function _(x){ 
     return document.getElementById(x);
 
 };
-
-$(document).ready (); {
-    var number = 30;
-    var counter = setInterval(myTimer, 1000); 
-    
-    function myTimer() {
-            number--;
-        if (myTimer <= 0) {
-            clearInterval();
-            return;
-        }
-    }
-    
-    $('#timer').html("Timer: " + number); 
-};
-
-// function decrement() {
-//     number--;
-//     $("#timer").html("<h2>" + number + "</h2>");
-// };
 function renderQuestion() {
     test = _("main-box");
+    if (pos >= questions.length) {
+        _("main-box").innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>");
+        _("main-box").innerHTML = "You have completed the quiz!";
+        pos = 0;
+        correct = 0;
+        return false;
+    }
     // document.getElementById("time-left").innerHTML = "Answer the most questions in 30 seconds";
     _("main-box").innerHTML = ("Question " +(pos+1) + " of " +questions.length);
     question = questions[pos][0];
@@ -68,15 +59,47 @@ function checkAnswer() {
     }
     if (choice == questions[pos][4]) {
         correct++;
+        
        
+    } else if (choice != questions[pos][4]) {
+        incorrect--;
+        
     }
 
     pos++; 
     renderQuestion();
-    audio1.play(); 
+    // audio1.play(); 
+    
         
 }
 window.addEventListener("load", renderQuestion, false);
+// alert(test.innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>"));
+
+
+// function decrement() {
+//     $('#timer').html("Timer: " + number); 
+//     };
+        // $("#timer-button").on("click", function() {
+
+    
+    
+    // if (number === 0 ) {
+    //     stop();
+    //     alert("Times Up!");
+    //     }
+    
+    //     function myTimer() {
+    //             number--;
+    //         if (myTimer <= 0) {
+    //             clearInterval(counter);
+    //             return;
+    //         }
+    //     }
+        
+
+    // }
+
+
 
 // var countDown = setInterval(myTimer, 30000);
 

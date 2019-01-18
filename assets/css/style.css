@@ -12,6 +12,14 @@ body {
     padding: 50px;
 }
 
+#timer-button {
+    width: 20%;
+    margin: -200px 0px 0px 0px;
+    padding: 20px 0px 20px 0px;
+    font-family: 'Bungee Shade', cursive;
+    background-image: linear-gradient(orange,yellow);
+}
+
 .squad {
     background: url("../images/dbz.webp");
     position: sticky;
@@ -31,9 +39,9 @@ body {
 
 .main-box {
     color: black;
-    height: 2000px;
-    padding: 10%;
-    margin: 100px;
+    /* height: 500px; */
+    padding-top: 20px;
+    margin: 50px;
     font-family: 'Bungee Shade', cursive;
     text-align: center;
     /* background: url(../images/kingkaiplace.jpg); */
