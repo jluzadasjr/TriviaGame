@@ -24,7 +24,18 @@ function _(x){
 };
 
 $(document).ready (); {
-
+    var number = 30;
+    var counter = setInterval(myTimer, 1000); 
+    
+    function myTimer() {
+            number--;
+        if (myTimer <= 0) {
+            clearInterval();
+            return;
+        }
+    }
+    
+    $('#timer').html("Timer: " + number); 
 };
 
 // function decrement() {
@@ -70,15 +81,4 @@ window.addEventListener("load", renderQuestion, false);
 // var countDown = setInterval(myTimer, 30000);
 
 
-var number = 30;
-var counter = setInterval(myTimer, 1000); 
 
-function myTimer() {
-        number--;
-    if (myTimer <= 0) {
-        clearInterval();
-        return;
-    }
-}
-
-$('#timer').html("Timer: " + number); 
