@@ -12,14 +12,18 @@ var questions = [
     ["What is the name of the dance that combined Goku and Vegeta into one strong fighter?", "Fusion Dance", "The Shimmy", "(c) Combination Dance", " Break Dance", "A"]
 ];
 
-var audio = new Audio ('assets/images/kamehameha.wav');
+var audio1 = new Audio ('assets/images/kamehameha.wav');
 var audio2 = new Audio ('assets/images/aura.wav');
 var audio3 = new Audio ('assets/images/vegeta.wav');
 var audio4 = new Audio ('assets/images/powerup.wav');
-var number = 30;
+
 
 function _(x){ 
     return document.getElementById(x);
+
+};
+
+$(document).ready (); {
 
 };
 
@@ -29,14 +33,7 @@ function _(x){
 // };
 function renderQuestion() {
     test = _("main-box");
-    if (pos >= question.length) {
-    //     test.innerHTML = "<h2>You got " +correct+ " of "+questions.length+" questions correct </h2>";
-    //     _("#main-box").innerHTML = alert("Test Finished");
-    //     pos = 0;
-    //     correct = 0;
-    //     return false;
-    // }
-
+    // document.getElementById("time-left").innerHTML = "Answer the most questions in 30 seconds";
     _("main-box").innerHTML = ("Question " +(pos+1) + " of " +questions.length);
     question = questions[pos][0];
     chA = questions[pos][1];
@@ -70,13 +67,18 @@ function checkAnswer() {
 }
 window.addEventListener("load", renderQuestion, false);
 
-// setTimeout(timeUp, 1000 * 15);
-// var timer = $("#timer");
-
-// function timeUp() {
-//     console.log("time")
-//     $("#timer").append("<h2>Time's Up</h2>");
-//     console.log("time is up");
-// }
+// var countDown = setInterval(myTimer, 30000);
 
 
+var number = 30;
+var counter = setInterval(myTimer, 1000); 
+
+function myTimer() {
+        number--;
+    if (myTimer <= 0) {
+        clearInterval();
+        return;
+    }
+}
+
+$('#timer').html("Timer: " + number); 
