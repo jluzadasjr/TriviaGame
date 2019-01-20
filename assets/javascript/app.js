@@ -22,7 +22,7 @@ var startTimerButton;
 var time = 30;
 var intervalId = 0;
 var correct = 0;
-
+var incorrect = 0;
 
 function _(x){ 
     return document.getElementById(x);
@@ -46,7 +46,7 @@ function renderQuestion() {
     chB = questions[pos][2];
     chC = questions[pos][3];
     chD = questions[pos][4];
-    test.innerHTML = "<br><br><br><br><br><br>"+"<h4>"+question+"</h4>";
+    test.innerHTML = "<h4>"+question+"</h4>";
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='A'> "+chA+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='B'> "+chB+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='C'> "+chC+"<br>"; 
@@ -55,21 +55,20 @@ function renderQuestion() {
 } 
 
 function checkAnswer() {
-    choices = document.getElementsByName("choices");
+    choices = document.getElementsByName("test_status");
     for (var i = 0; i<choices.length; i++) {
         if(choices[i].checked) {
             choice = choices[i].value;
         }
     }
-    if (choice == questions[pos][4]) {
+    if (choice == question[pos][5]) {
         correct++;
         
        
-    } else if (choice != questions[pos][4]) {
+    } else if (choice != question[pos][5]) {
         incorrect--;
         
-    }
-
+    } 
     pos++; 
     renderQuestion();
     // audio1.play(); 
@@ -81,19 +80,23 @@ window.addEventListener("load", renderQuestion, false);
 $("#timer-button").on("click", run);
 $("#pause-button").on("click", stop);
 
-    function run() {
+function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
     }
 
 function decrement() {
+    if ($("#timer-button").on("click", run)) {
         time--;
     
         $("#time").html("<h2>" + time + "</h2>");
+
+    }
     
         if (time === 0) {
             stop();
             alert("Times Up!");
+            $("#test2").hide();
             audio4.play();
         }
     }
@@ -102,10 +105,7 @@ function decrement() {
         clearInterval(intervalId);
 
     }
-
     run();
-
-
 
 
 
