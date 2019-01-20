@@ -1,10 +1,15 @@
 body {
     background-image: linear-gradient(red,yellow);
 }
+
+#test_status {
+    text-align: center;
+    
+}
 #test {
     background: url("../images/dbztitle.png");
     background-repeat: no-repeat;
-    padding: 170px 0px 100px 0px;
+    padding: 150px 0px 100px 0px;
 
 }
 
@@ -13,18 +18,30 @@ body {
 }
 
 #timer-button {
-    width: 20%;
-    margin: -200px 0px 0px 0px;
+    width: 40%;
     padding: 20px 0px 20px 0px;
     font-family: 'Bungee Shade', cursive;
-    background-image: linear-gradient(orange,yellow);
+    /* background-image: linear-gradient(orange,yellow); */
+    background: black;
+    color: white;
+    font-size: 28px;
+}
+
+#pause-button {
+    width: 40%;
+    padding: 20px 0px 20px 0px;
+    font-family: 'Bungee Shade', cursive;
+    /* background-image: linear-gradient(orange,yellow); */
+    background: black;
+    color: white;
+    font-size: 28px;
 }
 
 .squad {
     background: url("../images/dbz.webp");
     position: sticky;
     background-repeat: no-repeat;
-    margin: -320px 100px 0px 0px;
+    margin: -200px 100px 0px 0px;
     float: right;
     width: 30%;
 }
@@ -63,14 +80,16 @@ body {
     .squad {
         position: sticky;
         background-repeat: no-repeat;
-        margin: -275px 50px 0px 0px;
+        margin: -200px 50px 0px 0px;
         float: right;
         width: 30%;
     }
     .trivia { 
         font-family: 'Bungee Shade', cursive;
         color: yellow;
-        font-size: 90px;
+        font-size: 100px;
+}
+
 }
 
 @media screen and (max-width: 1350px) {
@@ -81,7 +100,7 @@ body {
     .squad {
         position: sticky;
         background-repeat: no-repeat;
-        margin: -275px 40px 0px 0px;
+        margin: -220px -20px 0px 0px;
         float: right;
         width: 30%;
     }
@@ -89,6 +108,8 @@ body {
         font-family: 'Bungee Shade', cursive;
         color: yellow;
         font-size: 80px;
+
+}
 
 }
 
@@ -103,7 +124,7 @@ body {
     .squad {
         position: sticky;
         background-repeat: no-repeat;
-        margin: -270px 50px 0px 0px;
+        margin: -200px 30px 0px 0px;
         float: right;
         width: 30%;
     }
@@ -112,6 +133,8 @@ body {
         font-family: 'Bungee Shade', cursive;
         color: yellow;
         font-size: 70px;
+
+}
 
 }
 
@@ -124,7 +147,7 @@ body {
     .squad {
         position: sticky;
         background-repeat: no-repeat;
-        margin: -270px 30px 0px 0px;
+        margin: -230px -25px 0px 0px;
         float: right;
         width: 30%;
     }
@@ -133,7 +156,9 @@ body {
     .trivia { 
         font-family: 'Bungee Shade', cursive;
         color: yellow;
-        font-size: 60px;
+        font-size: 70px;
+
+}
 
 }
 
@@ -147,13 +172,13 @@ body {
 .trivia { 
     font-family: 'Bungee Shade', cursive;
     color: yellow;
-    font-size: 50px;
+    font-size: 60px;
 
 }
 .squad {
     position: sticky;
     background-repeat: no-repeat;
-    margin: -250px 0px 0px 0px;
+    margin: -230px -100px 0px 0px;
     float: right;
     width: 30%;
 }
@@ -172,7 +197,7 @@ body {
     .trivia { 
         font-family: 'Bungee Shade', cursive;
         color: yellow;
-        margin-top: -90px;
+        margin-top: -20px;
         font-size: 50px;
 
 }
@@ -180,10 +205,20 @@ body {
 .squad {
     position: sticky;
     background-repeat: no-repeat;
-    margin: -140px 130px 0px 0px;
+    margin: 0px 170px 0px 0px;
     float: right;
-    height: 18%;
-    width: 35%;
+    height: 120px;
+    width: 50%;
+}
+
+}
+
+
+#timer-button {
+    width: 40%;
+    margin: -40px 0px 20px 0px;
+    font-family: 'Bungee Shade', cursive;
+    /* background-image: linear-gradient(orange,yellow); */
 }
 
 @media screen and (max-width: 640px) {
@@ -196,39 +231,65 @@ body {
     .trivia { 
         font-family: 'Bungee Shade', cursive;
         color: yellow;
-        font-size: 60px;
-        margin-top: 50px;
+        font-size: 50px;
+        margin-top: 30px;
 
 }
 
 .squad {
     position: sticky;
     background-repeat: no-repeat;
-    margin: -280px 160px 0px 0px;
+    margin: 0px 140px 0px 0px;
     float: right;
-    width: 40%;
+    width: 50%;
+    height: 120px; 
+    }
+
+    #timer-button {
+        width: 40%;
+        margin: 20px 0px 20px 0px;
+        font-family: 'Bungee Shade', cursive;
+        /* background-image: linear-gradient(orange,yellow); */
+}
 }
 
 @media screen and (max-width: 500px) {
     #test {
         background: url(../images/dbztitle6.png);
         background-repeat: no-repeat;
-        margin-top: 5px;
+        margin: 5px 80px 0px 20px;
     }
 
 
     .trivia { 
         font-family: 'Bungee Shade', cursive;
         color: yellow;
-        font-size: 60px;
-        margin-top: -100px;
+        font-size: 40px;
+        margin: -100px 0px 30px 0px;
 
 }
 
 .squad {
     position: sticky;
     background-repeat: no-repeat;
-    margin: -270px 120px 0px 0px;
+    margin: -120px 80px 0px 0px;
     float: right;
-    width: 40%;
+    width: 60%;
+    height: 120px;
 }
+
+#answer { 
+    text-align: center;
+    margin: -40px 0px 0px 0px;
+    font-size: 30px;
+}
+
+#timer-button {
+    width: 60%;
+    margin: 20px 0px 20px 0px;
+    font-family: 'Bungee Shade', cursive;
+    /* background-image: linear-gradient(orange,yellow); */
+}
+
+}
+

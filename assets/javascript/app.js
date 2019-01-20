@@ -18,25 +18,27 @@ var audio1 = new Audio ('assets/images/kamehameha.wav');
 var audio2 = new Audio ('assets/images/aura.wav');
 var audio3 = new Audio ('assets/images/vegeta.wav');
 var audio4 = new Audio ('assets/images/powerup.wav');
-// var number = 30;
-// var counter = setInterval(myTimer, 1000); 
-
+var startTimerButton;
+var time = 30;
+var intervalId = 0;
 
 function _(x){ 
     return document.getElementById(x);
-
+    
 };
+
+
 function renderQuestion() {
-    test = _("main-box");
+    test = _("test2");
     if (pos >= questions.length) {
-        _("main-box").innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>");
-        _("main-box").innerHTML = "You have completed the quiz!";
+        _("test2").innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>");
+        _("test2").innerHTML = "You have completed the quiz!";
         pos = 0;
         correct = 0;
         return false;
     }
     // document.getElementById("time-left").innerHTML = "Answer the most questions in 30 seconds";
-    _("main-box").innerHTML = ("Question " +(pos+1) + " of " +questions.length);
+    _("test2").innerHTML = ("Question " +(pos+1) + " of " +questions.length);
     question = questions[pos][0];
     chA = questions[pos][1];
     chB = questions[pos][2];
@@ -73,31 +75,83 @@ function checkAnswer() {
         
 }
 window.addEventListener("load", renderQuestion, false);
+
+$("#timer-button").on("click", run);
+$("#pause-button").on("click", stop);
+
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+}
+
+function decrement() {
+        time--;
+    
+        $("#time").html("<h2>" + time + "</h2>");
+    
+        if (time === 0) {
+            stop();
+            alert("Times Up!");
+            audio4.play();
+        }
+    }
+    
+    function stop() {
+        clearInterval(intervalId);
+
+    }
+    run();
+
+
+
+
+// $("#timer-button").on("click", function() {
+//      startTimerButton = setTimeout (function() {
+//          alert("Hello");
+//     }, 1000);
+// });
+
+// setTimeout (fiveSeconds, 5000);
+
+
+
+// $("#start").on("click", function() {
+//     //  Set the button alert's timeout to run three seconds after the function's called.
+//     delayButtonAlert = setTimeout(function() {
+//       alert("Alert #2: Called 3 seconds after the start button is clicked.");
+//     }, 3000);
+//   });
+
+
 // alert(test.innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>"));
 
 
 // function decrement() {
 //     $('#timer').html("Timer: " + number); 
 //     };
-        // $("#timer-button").on("click", function() {
 
+// $("#timer-button").on("click", function() {
     
-    
-    // if (number === 0 ) {
-    //     stop();
-    //     alert("Times Up!");
-    //     }
-    
-    //     function myTimer() {
-    //             number--;
-    //         if (myTimer <= 0) {
-    //             clearInterval(counter);
-    //             return;
-    //         }
-    //     }
-        
+// var number = 30;
+// var counter = setInterval(myTimer, 1000); 
 
-    // }
+// function myTimer(myTimer){
+
+//     if (number === 0 ) {
+//         stop();
+//         alert("Times Up!");
+//         }
+    
+//         function myTimer() {
+//                 number--;
+//             if (myTimer <= 0) {
+//                 clearInterval(counter);
+//                 return;
+//             }
+//         }
+//     }
+
+    // };
 
 
 
