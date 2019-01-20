@@ -21,6 +21,8 @@ var audio4 = new Audio ('assets/images/powerup.wav');
 var startTimerButton;
 var time = 30;
 var intervalId = 0;
+var correct = 0;
+
 
 function _(x){ 
     return document.getElementById(x);
@@ -31,14 +33,14 @@ function _(x){
 function renderQuestion() {
     test = _("test2");
     if (pos >= questions.length) {
-        _("test2").innerHTML = ("<h2> You got " +correct+" of "+question.length+" questions correct</h2>");
-        _("test2").innerHTML = "You have completed the quiz!";
+        $("#test_status").html("<h2> You got " +correct+ " of " +questions.length+" questions correct</h2>");
+        $("#test2").html("<h2>You have completed the quiz!</h2>");
         pos = 0;
         correct = 0;
         return false;
     }
     // document.getElementById("time-left").innerHTML = "Answer the most questions in 30 seconds";
-    _("test2").innerHTML = ("Question " +(pos+1) + " of " +questions.length);
+    _("test1").innerHTML = ("<h2>" + "Question " +(pos+1) + " of " +questions.length + "</h2>");
     question = questions[pos][0];
     chA = questions[pos][1];
     chB = questions[pos][2];
@@ -79,10 +81,10 @@ window.addEventListener("load", renderQuestion, false);
 $("#timer-button").on("click", run);
 $("#pause-button").on("click", stop);
 
-function run() {
-    clearInterval(intervalId);
-    intervalId = setInterval(decrement, 1000);
-}
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
 
 function decrement() {
         time--;
@@ -100,7 +102,10 @@ function decrement() {
         clearInterval(intervalId);
 
     }
+
     run();
+
+
 
 
 
