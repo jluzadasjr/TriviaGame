@@ -1,4 +1,4 @@
-//  Simple Timer Solution
+//set up variables and array
 var pos = 0, test, test_status, question, choice, chA, chB, chC, chD, correct, incorrect = 0;
 var questions = [
     
@@ -21,15 +21,16 @@ var audio4 = new Audio ('assets/images/powerup.wav');
 var startTimerButton;
 var time = 30;
 var intervalId = 0;
-var correct = 0;
-var incorrect = 0;
+var correct;
+var incorrect;
 
+//returning ID reference for ID string
 function _(x){ 
     return document.getElementById(x);
     
 };
 
-
+//populates questions, answer choices and 'submit' button onto screen
 function renderQuestion() {
     test = _("test2");
     if (pos >= questions.length) {
@@ -46,16 +47,17 @@ function renderQuestion() {
     chB = questions[pos][2];
     chC = questions[pos][3];
     chD = questions[pos][4];
-    test.innerHTML = "<h4>"+question+"</h4>";
+    test.innerHTML = "<h2>"+question+"</h2  >";
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='A'> "+chA+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='B'> "+chB+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='C'> "+chC+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='D'> "+chD+"<br><br>"; 
     test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
-} 
+}
 
+//function to check answer of the quiz
 function checkAnswer() {
-    choices = document.getElementsByName("test_status");
+    choices = document.getElementsByName("#test1");
     for (var i = 0; i<choices.length; i++) {
         if(choices[i].checked) {
             choice = choices[i].value;
@@ -63,11 +65,12 @@ function checkAnswer() {
     }
     if (choice == question[pos][5]) {
         correct++;
-        
+        // $("#test_status").html("<h2> You got " +correct+ " correct</h2>");
        
     } else if (choice != question[pos][5]) {
         incorrect--;
-        
+        alert("You wrong");
+        audio3.play();
     } 
     pos++; 
     renderQuestion();
@@ -77,13 +80,17 @@ function checkAnswer() {
 }
 window.addEventListener("load", renderQuestion, false);
 
-$("#timer-button").on("click", run);
-$("#pause-button").on("click", stop);
+const myButton = $("#timer-button").on("click", run);
+const myStopButton = $("#pause-button").on("click", stop);
 
 function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
     }
+
+myButton.addEventListener("click", () => {
+    myButton.time.decrement;
+    })
 
 function decrement() {
     if ($("#timer-button").on("click", run)) {
@@ -97,6 +104,8 @@ function decrement() {
             stop();
             alert("Times Up!");
             $("#test2").hide();
+            $("#test_status").html("<h2> You got " +correct+ " of " +questions.length+" questions correct</h2>");
+
             audio4.play();
         }
     }
@@ -106,6 +115,9 @@ function decrement() {
 
     }
     run();
+
+
+
 
 
 
