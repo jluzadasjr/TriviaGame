@@ -19,9 +19,9 @@ var audio2 = new Audio ('assets/images/aura.wav');
 var audio3 = new Audio ('assets/images/vegeta.wav');
 var audio4 = new Audio ('assets/images/powerup.wav');
 var startTimerButton;
-var time = 30;
+var time = 5;
 var intervalId = 0;
-var correct;
+var correct = 0;
 var incorrect;
 
 //returning ID reference for ID string
@@ -29,6 +29,7 @@ function _(x){
     return document.getElementById(x);
     
 };
+
 
 //populates questions, answer choices and 'submit' button onto screen
 function renderQuestion() {
@@ -47,7 +48,7 @@ function renderQuestion() {
     chB = questions[pos][2];
     chC = questions[pos][3];
     chD = questions[pos][4];
-    test.innerHTML = "<h2>"+question+"</h2  >";
+    test.innerHTML = "<h2>"+question+"</h2>";
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='A'> "+chA+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='B'> "+chB+"<br>"; 
     test.innerHTML += "<input class='form-check-input' type='radio' name='exampleRadios' id='exampleRadios1' value='C'> "+chC+"<br>"; 
@@ -80,46 +81,56 @@ function checkAnswer() {
 }
 window.addEventListener("load", renderQuestion, false);
 
-const myButton = $("#timer-button").on("click", run);
-const myStopButton = $("#pause-button").on("click", stop);
 
+//create the buttons for start, stop, reset
+const myStartButton = $("#timer-button").on("click", run);
+const myStopButton = $("#pause-button").on("click", stop);
+const myReset = $("#reset-button").on("click", reset);
+
+
+//runs the function for the start, stop, reset buttons
 function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
+        
     }
 
-myButton.addEventListener("click", () => {
-    myButton.time.decrement;
+myStartButton.addEventListener("click", () => {
+    myStartButton.time.decrement;
+
     })
 
+myReset.addEventListener("click", () =>  {
+    myReset.reset;
+    // console.log(myReset);
+});
+
+
+//function to run down the time.
 function decrement() {
-    if ($("#timer-button").on("click", run)) {
+    if (myStartButton.on("click", run)) {
         time--;
-    
         $("#time").html("<h2>" + time + "</h2>");
-
-    }
+        
+    } else if (myStopButton.on("click", stop)){
+        stop();
+        $("#test2").hide();
+        
+    };
     
-        if (time === 0) {
-            stop();
-            alert("Times Up!");
-            $("#test2").hide();
-            $("#test_status").html("<h2> You got " +correct+ " of " +questions.length+" questions correct</h2>");
-
-            audio4.play();
-        }
+    if (time === 0) {
+        $("#test2").hide();
+        stop();
+        $("#test_status").html("<h2> You got " +correct+ " of " +questions.length+" questions correct</h2>");
+        alert("Times Up!");
+        audio4.play();
+        } 
     }
     
     function stop() {
         clearInterval(intervalId);
-
     }
     run();
-
-
-
-
-
 
 
 // $("#timer-button").on("click", function() {

@@ -37,6 +37,15 @@ body {
     font-size: 28px;
 }
 
+#reset-button {
+    width: 40%;
+    padding: 20px 0px 20px 0px;
+    font-family: 'Bungee Shade', cursive;
+    background: black;
+    color: white;
+    font-size: 28px;
+}
+
 .squad {
     background: url("../images/dbz.webp");
     position: sticky;
